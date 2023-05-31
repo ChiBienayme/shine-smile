@@ -3,7 +3,11 @@
 }
 
 :root {
-    --header-bg: #10375C ;
+    --primary-color: #10375c;
+    --secondary-color: #2E80CE;
+    --white-color: #fff;
+    --text-header-color:  #C9D2DA;
+    --text-color:  #575F66;
 }
 
 html {
@@ -13,7 +17,6 @@ html {
 body {
     font-size: 1.6rem;
     font-family: "Sora", sans-serif;
-
 }
 
 /* Common */
@@ -27,17 +30,40 @@ a {
     margin: 0 auto;
 }
 
+.btn {
+    --height: 60px;
+
+    display: inline-block;
+    text-align: center;
+    min-width: 205px;
+    height: var(--height);
+    padding: 0 20px;
+    border-radius: 99px;
+    font-style: 1.6rem;
+    font-weight: 400;
+    line-height: var(--height);
+    color: var(--white-color);
+    background-color: var(--secondary-color);
+    border: 1px solid var(--secondary-color);
+
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+
 /* Header */
 .header {
     min-height: 100vh;
-    background: var(--header-bg);
+    background: var(--primary-color);
+    padding-top: 30px;
 }
 
 .logo {
     font-size: 1rem;
     display: inline-flex;
     position: relative;
-
 }
 
 .logo__circle::before,
@@ -50,7 +76,7 @@ a {
 .logo__circle::before {
     width: 3em;
     height: 3em;
-    background: #2e80ce;
+    background: var(--secondary-color);
 }
 
 .logo__circle::after {
@@ -59,7 +85,7 @@ a {
     left: 1.1em;
     width: 1.6em;
     height: 1.6em;
-    background: #fff;
+    background: var(--white-color);
 }
 
 .logo__text {
@@ -72,10 +98,54 @@ a {
     display: block;
     font-size: 1.8em;
     font-weight: 400;
-    color: #fff;
+    color: var(--white-color);
 }
 
 .logo__brand--small {
     font-size: 1.2em;
     font-weight: 300;
 }
+
+/* Header top */
+.header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar__list {
+    display: flex;
+}
+
+.action__login,
+.navbar__link {
+    padding: 4px 21px;
+    font-size: 1.6rem;
+    font-weight: 300;
+    color: var(--text-header-color);
+}
+
+.navbar__link:hover,
+.navbar__link--active {
+    color: var(--white-color);
+    text-shadow: 1px 0 0 currentColor;
+}
+
+.navbar__link--active::before {
+    position: relative;
+    top: -2px;
+    left: -8px;
+    content: "";
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--white-color);
+}
+
+.action__signup {
+    --height: 44px;
+    min-width: 104px;
+}
+
+
